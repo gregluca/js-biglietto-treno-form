@@ -6,7 +6,7 @@ console.log (numberAgeElem);
 
 const sendBtn = document.getElementById ("send");
 
-const resultSection = document.querySelector(".result-section");
+const resultSection = document.querySelector("result-section");
 
 sendBtn.addEventListener("click", function () {
 
@@ -37,14 +37,11 @@ sendBtn.addEventListener("click", function () {
 
     // output 
     document.getElementById("greeting").innerHTML = userGreeting;
-    resultSection.classList.remove("hidden");
-
 })
 document.getElementById("return").addEventListener("click", function (){
     numberAgeElem.value ="";
     numberKmElem.value ="";
     document.getElementById("greeting").innerHTML ="";
-    resultSection.classList.add("hidden");
 })
 
 
