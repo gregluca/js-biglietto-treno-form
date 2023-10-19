@@ -4,8 +4,9 @@ console.log (numberKmElem);
 const numberAgeElem = document.getElementById ("age");
 console.log (numberAgeElem);
 
-
 const sendBtn = document.getElementById ("send");
+
+const resultSection = document.querySelector(".result-section");
 
 sendBtn.addEventListener("click", function () {
 
@@ -27,10 +28,24 @@ sendBtn.addEventListener("click", function () {
         discount = (price * 0.40).toFixed(2);
         console.log ("over", discount);
     }
-    //const resultSection = (price - discount).toFixed(2);
-
     price = (price - discount).toFixed(2);
-    console.log("prezzofinale", price);
+    console.log ("prezzofinale", price);
 
-    
+    // messaggio 
+    const userGreeting = `Ciao il tuo biglietto costa ${price}€`;
+    console.log(userGreeting);
+
+    // output 
+    document.getElementById("greeting").innerHTML = userGreeting;
+    resultSection.classList.remove("hidden");
+
 })
+document.getElementById("return").addEventListener("click", function (){
+    numberAgeElem.value ="";
+    numberKmElem.value ="";
+    document.getElementById("greeting").innerHTML ="";
+    resultSection.classList.add("hidden");
+})
+
+
+
